@@ -29,7 +29,8 @@
 
     function setCondition() {
         let regExp = /^[A-Za-z]+$/;
-        allWord = allWord.filter(word => word.length == playCondition[1]) //set 字數
+        allWord = allWord.filter(word => word.length == playCondition[1]); //set 字數
+        allWord = allWord.map(word => word.toUpperCase()); // set 全大階
         console.log("字串長度為"+playCondition[1]+"字量："+allWord.length); //check字數
 
         if (playCondition[3]) {
