@@ -24,15 +24,16 @@
 
     function start() {
         setCondition();
+        document.getElementById("text").innerHTML = allWord[questWord];
     }
 
     function setCondition() {
+        let regExp = /^[A-Za-z]+$/;
         allWord = allWord.filter(word => word.length == playCondition[1]) //set 字數
         console.log("字串長度為"+playCondition[1]+"字量："+allWord.length); //check字數
 
         if (playCondition[3]) {
             allWord = allWord.filter(word => {
-                let regExp = /^[A-Za-z]+$/;
                 if (regExp.test(word)) {
                     return true;
                 } else {
@@ -41,7 +42,6 @@
             });//set all eng
         } else if(playCondition[3]){
             allWord = allWord.filter(word => {
-                let regExp = /^[A-Za-z]+$/;
                 if (regExp.test(word)) {
                     return false;
                 } else {
