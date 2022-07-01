@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="text">
+
+    </div>
+</body>
+<script>
+    let questWord;
+    let allWord;
+    let playCondition = ["字串長度?", 5, "全英", true];
+    const wordText = "https://raw.githubusercontent.com/dwyl/english-words/master/words.txt"
+
+    fetch(wordText).then(response => response.text()).then(text => {
+        allWord = text.split('\n');
+        console.log(allWord);
+    }).then((start));
+
+    function start() {
+        setCondition();
+    }
+
+    function setCondition() {
+        allWord = allWord.filter(word => word.length == playCondition[1]) //set 字數
+        console.log("字串長度為"+playCondition[1]+"字量："+allWord.length); //check字數
+
+        if (playCondition[3]) {
+            allWord = allWord.filter(word => {
+                let regExp = /^[A-Za-z]+$/;
+                if (regExp.test(word)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });//set all eng
+        } else if(playCondition[3]){
+            allWord = allWord.filter(word => {
+                let regExp = /^[A-Za-z]+$/;
+                if (regExp.test(word)) {
+                    return false;
+                } else {
+                    return true;
+                }
+            });//set !eng
+        }
+        console.log(playCondition[2]+" "+playCondition[3]+"字量: "+allWord.length); //check字數
+
+        questWord = Math.floor(Math.random() * allWord.length);
+        console.log("random result: "+allWord[questWord]);
+    }
+
+</script>
+
+</html>
