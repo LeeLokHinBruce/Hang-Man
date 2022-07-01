@@ -7,9 +7,14 @@
 </head>
 
 <body>
+  <input id="userinput" type="text">
+    <button onclick="compare()">Compare</button>
     <div id="text">
-
+       
     </div>
+    <div id="showans"></div>
+    <div id="showinput"></div>
+    <div id="showTorF"></div>
 </body>
 <script>
     let questWord;
@@ -25,7 +30,28 @@
     function start() {
         setCondition();
         document.getElementById("text").innerHTML = allWord[questWord];
+        //document.getElementById('showans').innerHTML = allWord[questWord];
+        
+        //add function
     }
+
+    const compare = () =>{
+      let inputValue = document.getElementById("userinput").value; 
+      let OriginValue = document.getElementById("text").value;
+      document.getElementById("showinput").innerHTML = inputValue; 
+      console.log(inputValue);
+      console.log(OriginValue);
+    //   if( inputValue === OriginValue){
+    //     console.log("ture");
+    //   }
+    //   else {
+    //     console.log("false");
+    //   }
+    };
+
+ 
+
+
 
     function setCondition() {
         let regExp = /^[A-Za-z]+$/;
@@ -54,6 +80,14 @@
         questWord = Math.floor(Math.random() * allWord.length);
         console.log("random result: "+allWord[questWord]);
     }
+
+
+    // if (allWord[questWord] === document.getElementById("userinput").innerHTML) {
+    //     return document.getElementById("userinput").innerHTML = allWord[questWord];
+    // }
+    // else{
+    //     return document.getElementById("userinput").innerHTML = allWord[questWord];
+    // };
 
 </script>
 
