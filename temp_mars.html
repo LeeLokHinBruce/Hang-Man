@@ -10,6 +10,16 @@
     <div id="text">
 
     </div>
+        <input id="userinput" type="text">
+        <button onclick="compare()">Compare</button>
+        <div id="text">
+           
+        </div>
+        <div id="showans"></div>
+        <div id="showinput"></div>
+        <div id="ansText"></div>
+        <div id="showTorF"></div>
+    </div>
 </body>
 <script>
     let questWord;
@@ -25,8 +35,34 @@
     function start() {
         setCondition();
         document.getElementById("text").innerHTML = allWord[questWord];
+       
     }
+        const compare = () =>{
+            let inputValue = document.getElementById("userinput").value; 
+      let OriginValue = allWord[questWord];
+      document.getElementById("showinput").innerHTML = inputValue; 
+        //show corresponding number of letter 
+            console.log("There are " + OriginValue.length + "letters of the word")
+            let ansText = ["_","_","_","_","_"]
+            console.log(ansText)
 
+            for(let i=0; i< OriginValue.length ;i++){
+            ansText.splice(i,1,"_") 
+            
+            }
+        
+            // save correct ans x
+            for(let j=0; j< OriginValue.length  ;j++){ 
+            if(OriginValue[j] === inputValue[j]){
+            ansText.splice(j,1,OriginValue[j]) 
+            }else{
+            ansText.splice(j,1,"_") 
+            }
+            console.log(ansText.join(""))
+            }
+        document.getElementById("ansText").innerHTML = ansText.join(""); 
+    }
+    
     function setCondition() {
         let regExp = /^[A-Za-z]+$/;
         allWord = allWord.filter(word => word.length == playCondition[1]); //set 字數
