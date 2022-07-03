@@ -98,7 +98,7 @@ header h1 {
     height: 100%;
     display: none;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .gameover {
@@ -107,16 +107,16 @@ header h1 {
     justify-content: center;
 }
 
-.gameover h1 {
+.gameover #gameover-result {
     text-align: center;
     font-family: 'Libre Barcode 128 Text', 'Libre Barcode 39 Text', cursive;
     font-size: 148px;
     font-weight: 300;
-    color: #AF0000;
+    /* color: #AF0000; */
     /* color: #008000; */
     flex: 100%;
 }
 
 .gameover .btn {
-    margin: 100px 0 74px;
+    margin-top: 80px;
 }
