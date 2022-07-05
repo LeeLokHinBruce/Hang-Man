@@ -120,3 +120,12 @@ header h1 {
 .gameover .btn {
     margin-top: 80px;
 }
+
+@media only screen and (max-width: 991px){
+    header h1 {
+        font-size: 60px;
+    }
+    #life {
+        position: static;
+    }
+}
