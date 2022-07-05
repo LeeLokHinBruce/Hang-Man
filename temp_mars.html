@@ -43,12 +43,12 @@
       document.getElementById("showinput").innerHTML = inputValue; 
         //show corresponding number of letter 
             console.log("There are " + OriginValue.length + "letters of the word")
-            let ansText = ["_","_","_","_","_"]
+            let ansText = []
             console.log(ansText)
 
             for(let i=0; i< OriginValue.length ;i++){
-            ansText.splice(i,1,"_") 
-            
+            ansText.push(i,1,"_") 
+        
             }
         
             // save correct anstext
