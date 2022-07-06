@@ -10,7 +10,6 @@ body {
     font-family: 'LED Digital 7', sans-serif;
 }
 
-header,
 .container {
     display: flex;
     justify-content: center;
@@ -20,16 +19,13 @@ header,
 
 header h1 {
     font-family: 'Libre Barcode 128 Text', 'Libre Barcode 39 Text', cursive;
-    font-size: 128px;
     font-weight: 300;
-    padding-top: 10px;
 }
 
 #life {
     position: absolute;
-    top: 30px;
-    right: 30px;
-    display: flex;
+    top: 0;
+    right: 0;
 }
 
 #life-count {
@@ -38,12 +34,6 @@ header h1 {
     padding-right: 30px;
     display: flex;
     align-items: center;
-}
-
-.letters-list {
-    display: grid;
-    column-gap: 50px;
-    /* grid-template-columns: repeat(8, 1fr); */
 }
 
 .letters-list [id*="letter-"] {
@@ -74,21 +64,13 @@ header h1 {
 }
 
 .btn {
-    background-color: #462294;
+    /* background-color: #462294;
+    border: none;
+    border-radius: 20px; */
     color: #fff;
     font-family: 'Inter', sans-serif;
-    font-size: 30px;
-    border: none;
-    border-radius: 20px;
     width: 300px;
     height: 70px;
-    transition: .2s ease-in-out;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: blue;
-    width: 400px;
 }
 
 .gameover-wrapper {
@@ -120,4 +102,45 @@ header h1 {
 
 .gameover .btn {
     margin-top: 80px;
+}
+
+@media only screen and (min-width: 769px) {
+    header h1 {
+        font-size: 128px;
+        padding-top: 30px;
+    }
+
+    #life {
+        padding: 20px;
+    }
+
+    .letters-list {
+        display: grid;
+        column-gap: 50px;
+        /* grid-template-columns: repeat(8, 1fr); */
+    }
+
+    #hangman-img {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 108px;
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    #life {
+        padding: 14px;
+    }
+
+    .letter-list {
+        display: grid;
+    }
+
+    #hangman-img {
+        width: 300px;
+    }
 }
