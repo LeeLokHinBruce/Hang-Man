@@ -29,6 +29,7 @@ header h1 {
 }
 
 #life-count {
+    font-family: 'LED Digital 7', sans-serif;
     font-size: 64px;
     float: left;
     padding-right: 30px;
